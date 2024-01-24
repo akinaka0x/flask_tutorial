@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  # 開発用。interactiveにflaskを実行できる
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ../app:/app
+    entrypoint: /bin/bash
+    stdin_open: true
+    tty: true
